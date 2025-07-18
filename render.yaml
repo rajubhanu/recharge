@@ -1,8 +1,6 @@
 services:
   - type: web
     name: recharge
-    env: php
+    env: docker
+    dockerfilePath: ./Dockerfile
     plan: free
-    buildCommand: ""
-    startCommand: ""
-    rootDir: .
