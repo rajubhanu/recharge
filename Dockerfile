@@ -1,14 +1,11 @@
-# Use official PHP-Apache image
 FROM php:8.2-apache
 
-# Enable Apache mod_rewrite (important for routing)
+# Install mysqli extension and enable Apache mod_rewrite
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN a2enmod rewrite
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-# Copy all project files into the container
+# Copy project files
 COPY . /var/www/html/
-
-# Set working directory
 WORKDIR /var/www/html/
-
-# Expose port 80
 EXPOSE 80
