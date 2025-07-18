@@ -1,7 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
+$host = "https://db4free.net/";
+$user = "rajubhanu0";
+$pass = "Rajubhanu@12";
 $db = "recharge_portal";
 $conn = new mysqli($host,$user,$pass,$db);
 if($conn->connect_error){ die("DB Error: ".$conn->connect_error); }
