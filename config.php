@@ -6,7 +6,7 @@ $db = "recharge_portal";
 $port = '5432'; // PostgreSQL port
 
 try {
-    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$db", $user, $pass);
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=$db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // echo "Connected successfully";
 } catch(PDOException $e) {
