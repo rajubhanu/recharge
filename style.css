@@ -1,0 +1,4 @@
+body{background:#e6f4ea;font-family:'Segoe UI',sans-serif;}
+.card{border-radius:12px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+.btn-success{background-color:#28a745;border:none;}
+.btn-success:hover{background-color:#218838;}
