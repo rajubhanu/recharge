@@ -1,8 +1,8 @@
 <?php
 $host = "db4free.net";
-$user = "rajubhanu";
+$user = "rajubingi";
 $pass = "Rajubhanu@12";
-$db = "recharge_portal";
+$db = "recharge";
 $conn = new mysqli($host,$user,$pass,$db);
 if($conn->connect_error){ die("DB Error: ".$conn->connect_error); }
 
