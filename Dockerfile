@@ -1,17 +1,13 @@
 FROM php:8.1-apache
 
-# Install system dependencies and PHP extensions
-RUN apt-get update && apt-get install -y \
-    libzip-dev zip unzip libpng-dev \
-    && docker-php-ext-install mysqli pdo pdo_mysql
+# Install required PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-RUN docker-php-ext-install pdo pdo_mysql
+# Enable Apache rewrite (optional)
+RUN a2enmod rewrite
 
-# Copy project files to web root
+# Copy your PHP project
 COPY . /var/www/html/
 
-# Set correct permissions
+# Set permissions (optional)
 RUN chown -R www-data:www-data /var/www/html
-
-# Enable Apache modules
-RUN a2enmod rewrite
