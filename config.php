@@ -1,5 +1,5 @@
 <?php
-$host = "https://db4free.net/";
+$host = "db4free.net";
 $user = "rajubhanu0";
 $pass = "Rajubhanu@12";
 $db = "recharge_portal";
