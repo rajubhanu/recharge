@@ -3,9 +3,15 @@ $host = "dpg-d1stp83uibrs738lbtkg-a";
 $user = "recharge_portal_user";
 $pass = "8rp5Wou2Vu1h3jPhKOxbAKROa4lfVqrB";
 $db = "recharge_portal";
-$conn = new mysqli($host,$user,$pass,$db);
-if($conn->connect_error){ die("DB Error: ".$conn->connect_error); }
+$port = '5432'; // PostgreSQL port
 
+try {
+    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$db", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Connected successfully";
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
 // A1Topup API credentials
 define("A1_URL","https://business.a1topup.com/recharge/api");
 define("A1_USER","8919238651");
